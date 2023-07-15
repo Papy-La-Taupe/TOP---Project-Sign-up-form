@@ -4,7 +4,7 @@ html {
   *, *:before, *:after {
     box-sizing: inherit;
   }
-  
+
 #FrameForImgAndForm{
     display:flex;
     flex-direction: row;
@@ -65,4 +65,16 @@ html {
 #MainTextFrame{
     width:62vw;
     padding:5vw;
+}
+
+.TwoInputContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 5vw;
+}
+
+.OneInputContainer{
+    display: flex;
+    flex-direction: column;
 }
