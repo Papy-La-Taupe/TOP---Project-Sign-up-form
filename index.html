@@ -9,44 +9,52 @@
     <title>TOP-Project sign-up form</title>
 </head>
 <body>
-    <div class="frameForImgAndForm">
-        <img src="images/flowers.jpg" id="LeftSideImg" alt="A photo of a flower">
-        <div class="mainTextFrame">  
+    <div id="frameForImgAndForm">
+        <div id="ImageAndLogo">
+            <img src="images/flowers.jpg" id="LeftSideImg" alt="A photo of a flower">
+            <div id="Logo">
+                <img src="images/BeeLogo.jpg" id="LogoImg" alt="A logo with a Bee">
+                <p id="LogoText">The place to Bee</p>
+            </div>
+        <div id="mainTextFrame">
+            <p id="FirstParagraph">This is not a real online service ! There's nothing to win or lose, it is utterly useless and will absolutely not change you life...</p>
+            <p id="SecondParagraph">...See what we did here ? Now you just know you have to fill it !</p>  
             <form action="action.txt" method="post">
-
-                <div id="IdentificationContainer" class="TwoInputContainer">
-                    <div id="FirstNameInputContainer" class="OneInputContainer">
-                        <label for="FirstName">First Name</label>
-                        <input type="text" id="FirstNameInput" class="NoValidationRequired" name="FirstName" placeholder="Jesse">
+                <div id="SurveyCore">
+                    <div id="IdentificationContainer" class="TwoInputContainer">
+                        <div id="FirstNameInputContainer" class="OneInputContainer">
+                            <label for="FirstName">First Name</label>
+                            <input type="text" id="FirstNameInput" class="NoValidationRequired" name="FirstName" placeholder="Jesse">
+                        </div>
+                        <div id="LastNameInputContainer" class="OneInputContainer">
+                            <label for="LastName">Last Name</label>
+                            <input type="text" id="LastNameInput" class="NoValidationRequired" name="LastName" placeholder="Doe">
+                        </div>
                     </div>
-                    <div id="LastNameInputContainer" class="OneInputContainer">
-                        <label for="LastName">Last Name</label>
-                        <input type="text" id="LastNameInput" class="NoValidationRequired" name="LastName" placeholder="Doe">
+                    <div id="ContactContainer" class="TwoInputContainer">
+                        <div id="EmailInputContainer" class="OneInputContainer">
+                            <label for="Email">Email</label>
+                            <input type="email" id="EmailInput" class="NoValidationRequired" name="Email" placeholder="jesse.doe@odinproject.com">
+                        </div>
+                        <div id="PhoneInputContainer" class="OneInputContainer">
+                            <label for="Phone">Phone</label>
+                            <input type="text" id="PhoneInput" class="NoValidationRequired" name="Phone" placeholder="0678451202">
+                        </div>
+                    </div>
+                    <div id="PasswordProcessContainer" class="TwoInputContainer">
+                        <div id="PasswordCreationInputContainer" class="OneInputContainer">
+                            <label for="Password">Password</label>
+                            <input type="password" id="PasswordInput" class="NoValidationRequired" name="Password" >
+                        </div>
+                        <div id="PasswordVerificationInputContainer" class="OneInputContainer">
+                            <label for="PasswordCheck">Confirm Password</label>
+                            <input type="password" id="PasswordCheckInput" class="ValidationRequired" name="PasswordCheck" >
+                        </div>
                     </div>
                 </div>
-
-                <div id="ContactContainer" class="TwoInputContainer">
-                    <div id="EmailInputContainer" class="OneInputContainer">
-                        <label for="Email">Email</label>
-                        <input type="email" id="EmailInput" class="NoValidationRequired" name="Email" placeholder="jesse.doe@odinproject.com">
-                    </div>
-                    <div id="PhoneInputContainer" class="OneInputContainer">
-                        <label for="Phone">Phone</label>
-                        <input type="number" id="PhoneInput" class="NoValidationRequired" name="Phone" placeholder="0678451202">
-                    </div>
-                </div>
-
-                <div id="PasswordProcessContainer" class="TwoInputContainer">
-                    <div id="PasswordCreationInputContainer" class="OneInputContainer">
-                        <label for="Password">Password</label>
-                        <input type="password" id="PasswordInput" class="NoValidationRequired" name="Password" >
-                    </div>
-                    <div id="PasswordVerificationInputContainer" class="OneInputContainer">
-                        <label for="PasswordCheck">Confirm Password</label>
-                        <input type="password" id="PasswordCheckInput" class="ValidationRequired" name="PasswordCheck" >
-                    </div>
-                </div>
+                <button type="submit" id="SubmitButton">Create Account</button>    
             </form>
+            <p id="CehckInLink">Already one of us ? then let's <a href="index.html">Log In</a> !</p>
         </div>
     </div>
 
