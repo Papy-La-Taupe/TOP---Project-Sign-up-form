@@ -15,6 +15,11 @@ html,body{
     --main-font-family:Arial, Helvetica, sans-serif;
 } 
   
+input{
+    width:20vw;
+    height:3vw;
+}
+
 #FrameForImgAndForm{
     display:flex;
     flex-direction: row;
@@ -123,6 +128,27 @@ html,body{
     padding-top: 2vw;
     margin-bottom: 2.5vw;
     font-family: var(--main-font-family)
+}
+
+input{
+    border: 2px solid #CCC;
+    background-color: rgb(210,180,222);
+}
+
+input:hover{
+    background-color: rgba(210,180,222,0.5);  
+}
+
+input:invalid:not(:placeholder-shown) {
+    border: 2px red solid;
+    background-color: rgba(250,150,150,0.3);
+}
+
+input:valid:not(:placeholder-shown){
+    border:2px rgb(210,180,222) solid;
+    border-radius: 10px;
+    background-color: rgba(210,180,222,0.5);
+    box-shadow: 2px 2px 3px rgba(210,180,222,0.7);
 }
 
 #SubmitButton{
