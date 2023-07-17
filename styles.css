@@ -130,21 +130,21 @@ input{
     font-family: var(--main-font-family)
 }
 
-input{
+.NoJSValidation{
     border: 2px solid #CCC;
     background-color: rgb(210,180,222);
 }
 
-input:hover{
+.NoJSValidation:hover{
     background-color: rgba(210,180,222,0.5);  
 }
 
-input:invalid:not(:placeholder-shown) {
+.NoJSValidation:invalid:not(:placeholder-shown) {
     border: 2px red solid;
     background-color: rgba(250,150,150,0.3);
 }
 
-input:valid:not(:placeholder-shown){
+.NoJSValidation:valid:not(:placeholder-shown){
     border:2px rgb(210,180,222) solid;
     border-radius: 10px;
     background-color: rgba(210,180,222,0.5);
