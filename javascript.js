@@ -20,7 +20,8 @@ passwordInput.addEventListener("input", (e)=>{
     passwordData = aELScopePasswordData;
     console.log(passwordData);
     
-    
+  
+        //Fairly simple conditon check
     if(/\d/.test(e.data) && numberInputed == 0){
         numberInputed = 1;
         
@@ -33,13 +34,31 @@ passwordInput.addEventListener("input", (e)=>{
     }
     else if(passwordData.length >= 8 && lengthInputed == 0){
         lengthInputed = 1;
-    }
-    else if(/\b/.test(e.data)){ //modify this
-        
     };
 
+        //what happens when user hit the backspace touch : it will erase everything at once in the password input.
+        //why ? Well because it is a completely optionnal option in this project but it polishes it a bit without being too complicated to do.
+    passwordInput.addEventListener("keydown", (e)=>{
+        console.log(e);            if(e.key == "Backspace"){
+            numberInputed = 0;
+            capitalInputed = 0;
+            symbolInputed = 0;
+            lengthInputed = 0;
+            passwordConditions.classList.remove("AllConditionsMet");
+            passwordNumber.classList.remove("ConditionMet");
+            passwordCapital.classList.remove("ConditionMet");
+            passwordSymbol.classList.remove("ConditionMet"); 
+            passwordLength.classList.remove("ConditionMet");
+            aELScopePasswordData="";
+            passwordInput.value=aELScopePasswordData;
+            console.log(numberInputed, capitalInputed,symbolInputed,lengthInputed);
+        };
+    });  
+
+
+
         //Here I deploy my DOM modifications, granted by my previous EventListener.
-        console.log(numberInputed, capitalInputed,symbolInputed,lengthInputed);
+        
     if(numberInputed ==1 && capitalInputed == 1 && symbolInputed == 1 && lengthInputed == 1){
         passwordConditions.classList.add("AllConditionsMet");
     }
