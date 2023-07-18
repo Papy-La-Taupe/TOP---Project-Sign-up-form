@@ -182,7 +182,7 @@ input{
 
 .AllConditionsMet{
     border:2px rgb(210,180,222) solid;
-    padding-top: 1vw;
+    margin-top: 1vh;
     border-radius: 10px;
     box-shadow: 2px 2px 3px rgba(210,180,222,0.7);
 }

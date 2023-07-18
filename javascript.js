@@ -27,16 +27,12 @@ passwordCheckInput.addEventListener("input", (e)=>{
 })
 
 passwordInput.addEventListener("input", (e)=>{
-    console.log(e.data);
     let aELScopePasswordData= passwordInput.value;
     passwordData = aELScopePasswordData;
-    console.log(passwordData);
     
-  
         //Fairly simple conditon check
     if(/\d/.test(e.data) && numberInputed == 0){
         numberInputed = 1;
-        
     }
     else if(/[A-Z]/.test(e.data) && capitalInputed == 0){
         capitalInputed = 1;
@@ -52,23 +48,22 @@ passwordInput.addEventListener("input", (e)=>{
         //why ? Well because it is a completely optionnal option in this project but it polishes it a bit without being too complicated to do.
         //Could it have been handled more delicatly and in less lines ? well yes, yes it could have. But I don't know how yet and I prefer to go further in learning ^^
     passwordInput.addEventListener("keydown", (e)=>{
-        console.log(e);            if(e.key == "Backspace"){
+        if(e.key == "Backspace"){
             numberInputed = 0;
             capitalInputed = 0;
             symbolInputed = 0;
             lengthInputed = 0;
             passwordConditions.classList.remove("AllConditionsMet");
+            passwordInput.classList.remove("PasswordsValidated");
+            passwordCheckInput.classList.remove("PasswordsValidated");
             passwordNumber.classList.remove("ConditionMet");
             passwordCapital.classList.remove("ConditionMet");
             passwordSymbol.classList.remove("ConditionMet"); 
             passwordLength.classList.remove("ConditionMet");
             aELScopePasswordData="";
             passwordInput.value=aELScopePasswordData;
-            console.log(numberInputed, capitalInputed,symbolInputed,lengthInputed);
         };
     });  
-
-
 
         //Here I deploy my DOM modifications, granted by my previous EventListener.
         
