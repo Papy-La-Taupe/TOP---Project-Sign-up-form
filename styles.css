@@ -169,3 +169,19 @@ input{
 #CheckInLink{
     font-family: var(--main-font-family);
 }
+
+    /* DOM style class */
+
+.ConditionMet{
+    color: rgb(160,130,172);
+    text-shadow: #CCC;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.AllConditionsMet{
+    border:2px rgb(210,180,222) solid;
+    padding-top: 1vw;
+    border-radius: 10px;
+    box-shadow: 2px 2px 3px rgba(210,180,222,0.7);
+}

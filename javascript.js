@@ -7,6 +7,7 @@ const passwordNumber= document.getElementById("PasswordNumber");
 const passwordCapital= document.getElementById("PasswordCapital");
 const passwordSymbol= document.getElementById("PasswordSymbol");
 const passwordLength= document.getElementById("PasswordLength");
+const passwordConditions= document.getElementById("CheckpointBox");
 let passwordData= "";
 let numberInputed=0;
 let capitalInputed=0;
@@ -39,29 +40,35 @@ passwordInput.addEventListener("input", (e)=>{
 
         //Here I deploy my DOM modifications, granted by my previous EventListener.
         console.log(numberInputed, capitalInputed,symbolInputed,lengthInputed);
-    if(numberInputed == 1){
-        passwordNumber.style.color="rgb(160,130,172)";
+    if(numberInputed ==1 && capitalInputed == 1 && symbolInputed == 1 && lengthInputed == 1){
+        passwordConditions.classList.add("AllConditionsMet");
     }
     else{
-        passwordNumber.style.color="black";
+        passwordConditions.classList.remove("AllConditionsMet");
+    };
+    if(numberInputed == 1){
+        passwordNumber.classList.add("ConditionMet");
+    }
+    else{
+        passwordNumber.classList.remove("ConditionMet");
     };
     if(capitalInputed == 1){
-        passwordCapital.style.color="rgb(160,130,172)";
+        passwordCapital.classList.add("ConditionMet");
     }
     else{
-        passwordCapital.style.color="black";
+        passwordCapital.classList.remove("ConditionMet");
     };
     if(symbolInputed == 1){
-        passwordSymbol.style.color="rgb(160,130,172)";
+        passwordSymbol.classList.add("ConditionMet");
     }
     else{
-        passwordSymbol.style.color="black";
+        passwordSymbol.classList.remove("ConditionMet");
     };
     if(lengthInputed == 1){
-        passwordLength.style.color="rgb(160,130,172)";
+        passwordLength.classList.add("ConditionMet");
     }
     else{
-        passwordLength.style.color="black";
+        passwordLength.classList.remove("ConditionMet");
     };
 
 });
