@@ -3,6 +3,7 @@
     //I thought about using passwordInput.setCustomValidity, but as for now I just don't like the way it behave.
 
 const passwordInput= document.getElementById("PasswordInput");
+const passwordCheckInput= document.getElementById("PasswordCheckInput");
 const passwordNumber= document.getElementById("PasswordNumber");
 const passwordCapital= document.getElementById("PasswordCapital");
 const passwordSymbol= document.getElementById("PasswordSymbol");
@@ -13,6 +14,17 @@ let numberInputed=0;
 let capitalInputed=0;
 let symbolInputed=0;
 let lengthInputed=0;
+
+    //To be sure the password is checked
+passwordCheckInput.addEventListener("input", (e)=>{
+    let aELScopeCheckPasswordData= passwordCheckInput.value;
+    if(aELScopeCheckPasswordData == passwordData){
+        passwordCheckInput.classList.add("PasswordsValidated");
+    }
+    else{
+        passwordCheckInput.classList.remove("PasswordsValidated");
+    }
+})
 
 passwordInput.addEventListener("input", (e)=>{
     console.log(e.data);
@@ -38,6 +50,7 @@ passwordInput.addEventListener("input", (e)=>{
 
         //what happens when user hit the backspace touch : it will erase everything at once in the password input.
         //why ? Well because it is a completely optionnal option in this project but it polishes it a bit without being too complicated to do.
+        //Could it have been handled more delicatly and in less lines ? well yes, yes it could have. But I don't know how yet and I prefer to go further in learning ^^
     passwordInput.addEventListener("keydown", (e)=>{
         console.log(e);            if(e.key == "Backspace"){
             numberInputed = 0;
@@ -61,9 +74,11 @@ passwordInput.addEventListener("input", (e)=>{
         
     if(numberInputed ==1 && capitalInputed == 1 && symbolInputed == 1 && lengthInputed == 1){
         passwordConditions.classList.add("AllConditionsMet");
+        passwordInput.classList.add("PasswordsValidated");
     }
     else{
         passwordConditions.classList.remove("AllConditionsMet");
+        passwordInput.classList.remove("PasswordsValidated");
     };
     if(numberInputed == 1){
         passwordNumber.classList.add("ConditionMet");
